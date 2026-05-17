@@ -1,0 +1,62 @@
+[
+  {
+    "target": "http://www.dpdlocoqu.cyou/com",
+    "target_hash": "ea98add3e2378071",
+    "in_registry": true,
+    "registry_severity": "HIGH",
+    "gemma_assessment": {
+      "risk_level": "CRITICAL",
+      "recommendation": "BLOCK",
+      "reasoning": "The target URL is a confirmed phishing site actively impersonating a legitimate service to steal credentials, posing an immediate threat to user funds and protocol security."
+    },
+    "timestamp": "2026-05-17T14:51:39.342975"
+  },
+  {
+    "target": "https://uniswap.org",
+    "target_hash": "e6da479ca919f443",
+    "in_registry": false,
+    "registry_severity": null,
+    "gemma_assessment": {
+      "risk_level": "SAFE",
+      "recommendation": "PROCEED",
+      "reasoning": "uniswap.org is the official website for the well-established Uniswap decentralized exchange and presents a low risk based on domain reputation."
+    },
+    "timestamp": "2026-05-17T14:51:47.981253"
+  },
+  {
+    "target": "http://metamask-security-alert.com/connect",
+    "target_hash": "5c4fb122e137877a",
+    "in_registry": false,
+    "registry_severity": null,
+    "gemma_assessment": {
+      "risk_level": "SUSPICIOUS",
+      "recommendation": "CAUTION",
+      "reasoning": "The domain name \"metamask-security-alert.com\" is designed to mimic legitimate MetaMask communications and likely intends to phish user credentials or approve malicious transactions."
+    },
+    "timestamp": "2026-05-17T14:51:51.867096"
+  },
+  {
+    "target": "https://aave.com",
+    "target_hash": "2f2e3a63a4066fd9",
+    "in_registry": false,
+    "registry_severity": null,
+    "gemma_assessment": {
+      "risk_level": "SAFE",
+      "recommendation": "PROCEED",
+      "reasoning": "Aave is a well-established and audited DeFi lending protocol with a strong security track record."
+    },
+    "timestamp": "2026-05-17T14:51:54.314559"
+  },
+  {
+    "target": "http://instagram.com.universal-api.org/",
+    "target_hash": "da97dc665ba3142b",
+    "in_registry": true,
+    "registry_severity": "HIGH",
+    "gemma_assessment": {
+      "risk_level": "CRITICAL",
+      "recommendation": "BLOCK",
+      "reasoning": "The target is a known phishing URL designed to steal user credentials by mimicking Instagram, posing an immediate and severe threat to the protocol and its users."
+    },
+    "timestamp": "2026-05-17T14:51:56.194315"
+  }
+]

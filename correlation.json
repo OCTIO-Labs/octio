@@ -1,0 +1,89 @@
+{
+  "timestamp": "2026-05-17T14:53:56.980076",
+  "indicators_analysed": 5,
+  "incidents_compared": 5,
+  "correlation_results": {
+    "high_correlation_incidents": [
+      "Ronin Network Hack",
+      "Curve Finance DNS Hijack",
+      "MyEtherWallet BGP Hijack"
+    ],
+    "primary_attack_pattern": "Phishing attacks leveraging compromised branding and deceptive URLs to steal user credentials, particularly targeting access to wallets and Web3 applications. The incidents also show a willingness to use domain manipulation and redirection to harvest user data.",
+    "risk_to_defi": "CRITICAL",
+    "affected_platforms": [
+      "MetaMask",
+      "All wallets interacting with DPD or Instagram via web links",
+      "Decentralized Exchanges (DEXs)",
+      "Lending Protocols",
+      "Any protocol reliant on user-initiated transactions"
+    ],
+    "recommended_actions": [
+      "Implement enhanced URL filtering and warning systems for users clicking links related to common phishing targets (e.g., delivery services, social media).",
+      "Deploy stricter monitoring for domain squatting and typosquatting related to popular Web3 brands and services.",
+      "Educate users about phishing risks, emphasizing the importance of verifying URLs and never entering seed phrases on unverified websites."
+    ],
+    "analyst_summary": "Current indicators strongly suggest a coordinated phishing campaign targeting a wide range of users and platforms. The correlation with past incidents, particularly the Ronin Network Hack, demonstrates the significant financial risk posed by these attacks. DeFi protocols must immediately strengthen their security posture and user education to mitigate the current, critical threat."
+  },
+  "documented_incidents": [
+    {
+      "name": "Ronin Network Hack",
+      "date": "March 2022",
+      "loss_usd": 625000000,
+      "attack_vector": "PHISHING",
+      "description": "Developer phished via fake job offer, private keys compromised",
+      "indicators": [
+        "phishing",
+        "social engineering",
+        "credential theft"
+      ]
+    },
+    {
+      "name": "Curve Finance DNS Hijack",
+      "date": "August 2022",
+      "loss_usd": 570000,
+      "attack_vector": "DNS_HIJACK",
+      "description": "DNS records hijacked, users redirected to malicious frontend",
+      "indicators": [
+        "dns hijack",
+        "malicious frontend",
+        "domain compromise"
+      ]
+    },
+    {
+      "name": "Ledger Connect Kit Supply Chain",
+      "date": "December 2023",
+      "loss_usd": 600000,
+      "attack_vector": "SUPPLY_CHAIN",
+      "description": "Malicious code injected into npm package used by DeFi frontends",
+      "indicators": [
+        "supply chain",
+        "npm compromise",
+        "malicious package"
+      ]
+    },
+    {
+      "name": "MyEtherWallet BGP Hijack",
+      "date": "April 2018",
+      "loss_usd": 17000000,
+      "attack_vector": "BGP_ANOMALY",
+      "description": "BGP routing manipulation redirected traffic to attacker infrastructure",
+      "indicators": [
+        "bgp hijack",
+        "routing attack",
+        "dns compromise"
+      ]
+    },
+    {
+      "name": "Mixin Network Cloud Breach",
+      "date": "September 2023",
+      "loss_usd": 200000000,
+      "attack_vector": "SUPPLY_CHAIN",
+      "description": "Cloud service provider database compromised, private keys exposed",
+      "indicators": [
+        "cloud misconfiguration",
+        "credential exposure",
+        "infrastructure breach"
+      ]
+    }
+  ]
+}
