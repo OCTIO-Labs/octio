@@ -7,9 +7,9 @@
     "gemma_assessment": {
       "risk_level": "SUSPICIOUS",
       "recommendation": "CAUTION",
-      "reasoning": "The domain 'dpdlocoqu.cyou' uses a relatively uncommon top-level domain (.cyou) and a nonsensical subdomain suggesting potential malicious intent or a newly created site."
+      "reasoning": "The domain 'dpdlocoqu.cyou' uses a rarely seen top-level domain (.cyou) and a nonsensical subdomain, suggesting potential malicious intent or a newly created, unverified site."
     },
-    "timestamp": "2026-05-18T11:00:10.040869+00:00"
+    "timestamp": "2026-05-18T15:57:41.827620+00:00"
   },
   {
     "target": "https://uniswap.org",
@@ -19,9 +19,9 @@
     "gemma_assessment": {
       "risk_level": "SAFE",
       "recommendation": "PROCEED",
-      "reasoning": "uniswap.org is the official website for the well-established Uniswap decentralized exchange, and interacting with it directly is generally considered safe."
+      "reasoning": "uniswap.org is the official website for the well-established Uniswap decentralized exchange, and presents a low inherent risk."
     },
-    "timestamp": "2026-05-18T11:00:12.563351+00:00"
+    "timestamp": "2026-05-18T15:57:47.485977+00:00"
   },
   {
     "target": "http://metamask-security-alert.com/connect",
@@ -31,9 +31,9 @@
     "gemma_assessment": {
       "risk_level": "SUSPICIOUS",
       "recommendation": "CAUTION",
-      "reasoning": "The domain name \"metamask-security-alert.com\" attempts to impersonate MetaMask and specifically uses 'security-alert' which is a common phishing tactic to create a sense of urgency."
+      "reasoning": "The domain name \"metamask-security-alert.com\" strongly mimics a legitimate MetaMask security notification, likely intended for phishing or scam activity."
     },
-    "timestamp": "2026-05-18T11:00:20.875733+00:00"
+    "timestamp": "2026-05-18T15:57:51.462287+00:00"
   },
   {
     "target": "https://aave.com",
@@ -43,9 +43,9 @@
     "gemma_assessment": {
       "risk_level": "SAFE",
       "recommendation": "PROCEED",
-      "reasoning": "Aave is a well-established and audited DeFi lending protocol with a long track record, posing a low inherent risk based on domain reputation."
+      "reasoning": "Aave is a well-established and audited DeFi lending protocol with a strong security track record."
     },
-    "timestamp": "2026-05-18T11:00:27.433061+00:00"
+    "timestamp": "2026-05-18T15:57:57.209635+00:00"
   },
   {
     "target": "http://instagram.com.universal-api.org/",
@@ -55,8 +55,8 @@
     "gemma_assessment": {
       "risk_level": "SUSPICIOUS",
       "recommendation": "CAUTION",
-      "reasoning": "The domain uses a subdomain of 'instagram.com' but points to a '.org' TLD and 'universal-api' suggests a potential attempt to mimic legitimate Instagram APIs for malicious purposes."
+      "reasoning": "The domain utilizes 'universal-api.org' which suggests a broad scope and potential for unexpected functionality, coupled with 'instagram.com' implying a reliance on a social media platform, introducing external dependencies and potential for data manipulation."
     },
-    "timestamp": "2026-05-18T11:00:30.374146+00:00"
+    "timestamp": "2026-05-18T15:58:00.390314+00:00"
   }
 ]

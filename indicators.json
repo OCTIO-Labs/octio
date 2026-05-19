@@ -1,62 +1,62 @@
 [
   {
-    "url": "https://survey.refassured.com/mbMO6z3K",
-    "target_hash": "a3c5cd12bfd45056adfd5eb8dd27cc07d51e2ac01a2bcd09eca2cef5bb911a96",
-    "timestamp": "2026-05-18T10:58:51.221299+00:00",
+    "url": "https://pedagiodigital-flow.com/vias/home.php",
+    "target_hash": "efbe720346f8f9c0d340aa4261c8b03129a4024b8e21d1dce1a13eef764cd0d6",
+    "timestamp": "2026-05-18T15:56:43.404023+00:00",
     "gemma_analysis": {
       "is_threat": true,
       "threat_type": "PHISHING",
       "severity": "MEDIUM",
-      "target": "Ref Finance/RefAssured",
-      "reasoning": "The URL uses a survey subdomain (survey.refassured.com) which is commonly used in phishing campaigns to collect sensitive information by impersonating the legitimate Ref Finance platform."
+      "target": "viaviasocial.com (VIA Alliance)",
+      "reasoning": "The URL mimics the legitimate VIA Alliance website (viasocial.com) and uses 'pedagiodigital-flow' which is a suspicious domain name, likely attempting to steal user credentials through a fake login page."
     }
   },
   {
-    "url": "https://survey.refassured.com/mbMO6z3K/snooze-reminder/2",
-    "target_hash": "a3c5cd12bfd45056adfd5eb8dd27cc07d51e2ac01a2bcd09eca2cef5bb911a96",
-    "timestamp": "2026-05-18T10:58:59.838507+00:00",
-    "gemma_analysis": {
-      "is_threat": true,
-      "threat_type": "PHISHING",
-      "severity": "MEDIUM",
-      "target": "Ref Finance / RefAssured",
-      "reasoning": "The URL uses a 'survey' subdomain and a seemingly random string ('mbMO6z3K') combined with a 'snooze-reminder' path, which is typical of phishing attempts designed to mimic legitimate notifications from services like Ref Finance, asking for user credentials or wallet connection."
-    }
-  },
-  {
-    "url": "https://survey.refassured.com/mbMO6z3K/snooze-reminder/4",
-    "target_hash": "a3c5cd12bfd45056adfd5eb8dd27cc07d51e2ac01a2bcd09eca2cef5bb911a96",
-    "timestamp": "2026-05-18T10:59:03.029373+00:00",
-    "gemma_analysis": {
-      "is_threat": true,
-      "threat_type": "PHISHING",
-      "severity": "MEDIUM",
-      "target": "MetaMask",
-      "reasoning": "The URL utilizes a suspicious subdomain ('survey.refassured.com') and path ('snooze-reminder') designed to mimic a MetaMask reminder regarding a snoozed transaction, attempting to trick users into entering their seed phrase or private key."
-    }
-  },
-  {
-    "url": "https://survey.refassured.com/mbMO6z3K/snooze-reminder/3",
-    "target_hash": "a3c5cd12bfd45056adfd5eb8dd27cc07d51e2ac01a2bcd09eca2cef5bb911a96",
-    "timestamp": "2026-05-18T10:59:07.327642+00:00",
-    "gemma_analysis": {
-      "is_threat": true,
-      "threat_type": "PHISHING",
-      "severity": "MEDIUM",
-      "target": "Ref Finance",
-      "reasoning": "The URL uses 'refassured.com' which is a close misspelling of 'Ref Finance' and directs to a survey asking for credentials, likely to steal seed phrases or private keys."
-    }
-  },
-  {
-    "url": "https://fndmy-support.com/app/webroot/script/navigation_compass_find_devices_login_b4_passcode4/2026/",
-    "target_hash": "0d2c67bc513545c37b7489b678d9eabc940d61fa85fa70b89b990631c52900d1",
-    "timestamp": "2026-05-18T10:59:10.726000+00:00",
+    "url": "https://meta-id90013.agency-manager-support.com/",
+    "target_hash": "92f073482fd2334240409296e231de7e85ba5fc1e70dec99f13dd51de7cf3835",
+    "timestamp": "2026-05-18T15:56:50.017500+00:00",
     "gemma_analysis": {
       "is_threat": true,
       "threat_type": "PHISHING",
       "severity": "HIGH",
-      "target": "Find My Device (Apple)",
-      "reasoning": "The URL attempts to mimic Apple's Find My Device service with deceptive subdomains and file paths designed to steal iCloud credentials and potentially cryptocurrency associated with the account."
+      "target": "MetaMask",
+      "reasoning": "The URL attempts to mimic a legitimate support domain for MetaMask, using 'meta-' and 'agency-manager-support' to deceive users into providing sensitive information like seed phrases or private keys."
+    }
+  },
+  {
+    "url": "http://www.pcn-noticea.top/com/",
+    "target_hash": "1d125d00a6ef2012fa7f8786121084e89232b7ba82f4fe4c3ec35105f6fe63d4",
+    "timestamp": "2026-05-18T15:56:53.213832+00:00",
+    "gemma_analysis": {
+      "is_threat": true,
+      "threat_type": "PHISHING",
+      "severity": "HIGH",
+      "target": "Package Delivery/Notice",
+      "reasoning": "The URL uses a suspicious domain 'pcn-noticea.top' attempting to impersonate a package notification service, a common phishing tactic to steal credentials or install malware through malicious downloads."
+    }
+  },
+  {
+    "url": "http://www.pcn-noticra.top/com/",
+    "target_hash": "4a127e3bcb7440f2935a7552ad0b6368a00c77ed97a7c9e72ac0523379b4a58c",
+    "timestamp": "2026-05-18T15:57:01.552997+00:00",
+    "gemma_analysis": {
+      "is_threat": true,
+      "threat_type": "PHISHING",
+      "severity": "HIGH",
+      "target": "Unknown - likely impersonating a notification service or legal notice related to cryptocurrency/Web3",
+      "reasoning": "The domain 'pcn-noticra.top' is a newly registered domain with a suspicious top-level domain ('.top') and suggests an attempt to mimic official notices, common in Web3 phishing scams."
+    }
+  },
+  {
+    "url": "https://tiktokvc-1330623827.pichk.myqcloud.com/index.html",
+    "target_hash": "f63ac3c186f137b6115298b70ce719f775e3513b5506aecadeea71bdd59b6bbf",
+    "timestamp": "2026-05-18T15:57:05.299353+00:00",
+    "gemma_analysis": {
+      "is_threat": true,
+      "threat_type": "PHISHING",
+      "severity": "MEDIUM",
+      "target": "TikTok VC or potentially a broader investment scam",
+      "reasoning": "The URL uses a suspicious subdomain ('tiktokvc-1330623827.pichk.myqcloud.com') and a generic 'index.html' endpoint, suggesting an attempt to impersonate a TikTok venture capital firm or similar entity to solicit investment, likely a scam."
     }
   }
 ]

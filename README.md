@@ -96,7 +96,7 @@ Full whitepaper and research proposal available in the project documentation fol
 
 ## Known Limitations and Roadmap
 
-- Registry is currently simulated in Python -- Sepolia deployment in progress
+- Registry simulation in Python -- live contract at 0xb0F4ae6f47eE001804d933dc8AD4b34969C91A69 on Sepolia
 - Web3.py bridge for on-chain submission in progress
 - Additional monitoring sources (Certstream, PassiveDNS, npm audit) planned
 - ReputationManager.sol, ValidationPool.sol, GovernanceController.sol in progress
