@@ -51,26 +51,66 @@ When a DeFi protocol queries Chainlink, it gets a data point. When it queries OC
 ## Components
 
 - `monitor.py` -- Live phishing feed monitoring with Gemma 4 threat classification
-- `registry.py` -- On-chain registry simulation with keccak256 hash storage
+- `web3_bridge.py` -- Submits validated indicators directly to the live Sepolia contract
+- `registry.py` -- Local registry cache with keccak256 hash storage
 - `oracle.py` -- DeFi protocol query interface with Gemma 4 risk assessment
 - `correlation.py` -- Incident correlation against documented real-world hacks
 - `dashboard.py` -- Terminal dashboard for live threat visibility
-- `contracts/ThreatRegistry.sol` -- Solidity contract for Sepolia testnet deployment
+- `contracts/ThreatRegistry.sol` -- Deployed and verified on Sepolia at `0xb0F4ae6f47eE001804d933dc8AD4b34969C91A69`
 
 ---
 
 ## Quick Start
 
+### 1. Install dependencies
+
 ```bash
-pip install requests python-dotenv eth-hash[pycryptodome]
+pip install requests python-dotenv eth-hash[pycryptodome] web3
+```
+
+### 2. Configure environment
+
+```bash
 cp .env.example .env
-# Add your OpenRouter API key to .env
+```
+
+Edit `.env` and add:
+OPENROUTER_API_KEY="your_openrouter_key"
+PRIVATE_KEY="your_wallet_private_key"
+CONTRACT_ADDRESS="0xb0F4ae6f47eE001804d933dc8AD4b34969C91A69"
+> Your wallet must be authorised as a submitter on the contract. The deployer address is already authorised. If you are running with a different wallet, contact the project maintainer to be added.
+
+### 3. Run the full pipeline
+
+```bash
+# Step 1: Fetch live phishing URLs and classify with Gemma 4
 python3 monitor.py
-python3 registry.py
+
+# Step 2: Submit verified indicators to the live Sepolia contract
+python3 web3_bridge.py
+
+# Step 3: Run the DeFi protocol query interface
 python3 oracle.py
+
+# Step 4: Correlate against documented real-world incidents
 python3 correlation.py
+
+# Step 5: View the live terminal dashboard
 python3 dashboard.py
 ```
+
+`monitor.py` writes to `indicators.json`. `web3_bridge.py` reads from `indicators.json` and submits confirmed threats on-chain. Run them in order.
+
+---
+
+## Live Contract
+
+**ThreatRegistry on Sepolia testnet:**
+`0xb0F4ae6f47eE001804d933dc8AD4b34969C91A69`
+
+- Verified on Sourcify (exact match)
+- View on Etherscan: https://sepolia.etherscan.io/address/0xb0F4ae6f47eE001804d933dc8AD4b34969C91A69
+- 5 indicators submitted on-chain as of May 19, 2026
 
 ---
 
@@ -80,9 +120,9 @@ OCTIO operates as a four-layer system:
 
 | Layer | Function | Technology |
 |-------|----------|------------|
-| L1: Monitoring | Scans public Web2 sources for threat indicators | Python, OpenPhish, Certstream |
-| L2: Registry | Stores and governs verified threat intelligence | Solidity, Ethereum / Arbitrum |
-| L3: Oracle Interface | Exposes threat data to querying protocols | Chainlink adapter, Solidity |
+| L1: Monitoring | Scans public Web2 sources for threat indicators | Python, OpenPhish |
+| L2: Registry | Stores verified threat intelligence on-chain | Solidity, Sepolia testnet |
+| L3: Oracle Interface | Exposes threat data to querying protocols | Python, web3.py |
 | L4: Dashboard | Public interface for intelligence visibility | Python terminal dashboard |
 
 ---
@@ -96,8 +136,8 @@ Full whitepaper and research proposal available in the project documentation fol
 
 ## Known Limitations and Roadmap
 
-- Registry simulation in Python -- live contract at 0xb0F4ae6f47eE001804d933dc8AD4b34969C91A69 on Sepolia
-- Web3.py bridge for on-chain submission in progress
-- Additional monitoring sources (Certstream, PassiveDNS, npm audit) planned
-- ReputationManager.sol, ValidationPool.sol, GovernanceController.sol in progress
-- Model string is google/gemma-3-27b-it -- will update to Gemma 4 when available via OpenRouter
+- Single monitoring source (OpenPhish) -- Certstream, PassiveDNS, npm audit feeds planned
+- Submitter authorisation is manual -- governance layer (ValidationPool.sol) in progress
+- No Chainlink adapter yet -- oracle query from other contracts requires external adapter
+- ReputationManager.sol, GovernanceController.sol in progress
+- Model string is google/gemma-3-27b-it via OpenRouter
