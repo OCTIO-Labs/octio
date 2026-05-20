@@ -52,6 +52,7 @@ When a DeFi protocol queries Chainlink, it gets a data point. When it queries OC
 
 - `monitor.py` -- Live phishing feed monitoring with Gemma 4 threat classification
 - `web3_bridge.py` -- Submits validated indicators directly to the live Sepolia contract
+- `dns_monitor.py` -- VirusTotal DNS enrichment layer, dual-source confidence scoring (Gemma 4 + VirusTotal)
 - `registry.py` -- Local registry cache with keccak256 hash storage
 - `oracle.py` -- DeFi protocol query interface with Gemma 4 risk assessment
 - `correlation.py` -- Incident correlation against documented real-world hacks
@@ -86,16 +87,19 @@ CONTRACT_ADDRESS="0xb0F4ae6f47eE001804d933dc8AD4b34969C91A69"
 # Step 1: Fetch live phishing URLs and classify with Gemma 4
 python3 monitor.py
 
-# Step 2: Submit verified indicators to the live Sepolia contract
+# Step 2: Enrich indicators with VirusTotal DNS data
+python3 dns_monitor.py
+
+# Step 3: Submit verified indicators to the live Sepolia contract
 python3 web3_bridge.py
 
-# Step 3: Run the DeFi protocol query interface
+# Step 4: Run the DeFi protocol query interface
 python3 oracle.py
 
-# Step 4: Correlate against documented real-world incidents
+# Step 5: Correlate against documented real-world incidents
 python3 correlation.py
 
-# Step 5: View the live terminal dashboard
+# Step 6: View the live terminal dashboard
 python3 dashboard.py
 ```
 
@@ -136,7 +140,7 @@ Full whitepaper and research proposal available in the project documentation fol
 
 ## Known Limitations and Roadmap
 
-- Single monitoring source (OpenPhish) -- Certstream, PassiveDNS, npm audit feeds planned
+- Primary monitoring source is OpenPhish -- VirusTotal DNS enrichment added for dual-source confidence scoring. Certstream and npm audit feeds planned
 - Submitter authorisation is manual -- governance layer (ValidationPool.sol) in progress
 - No Chainlink adapter yet -- oracle query from other contracts requires external adapter
 - ReputationManager.sol, GovernanceController.sol in progress
