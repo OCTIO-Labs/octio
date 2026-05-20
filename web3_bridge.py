@@ -63,7 +63,7 @@ def submit_indicator(w3, contract, account, indicator):
     signed  = account.sign_transaction(tx)
     tx_hash = w3.eth.send_raw_transaction(signed.raw_transaction)
     print('  TX sent: 0x' + tx_hash.hex())
-    receipt = w3.eth.wait_for_transaction_receipt(tx_hash, timeout=120)
+    receipt = w3.eth.wait_for_transaction_receipt(tx_hash, timeout=300)
     status  = 'SUCCESS' if receipt.status == 1 else 'FAILED'
     print('  Status: ' + status + '  block ' + str(receipt.blockNumber) + '  gas ' + str(receipt.gasUsed))
     return {'url':url,'tx_hash':'0x'+tx_hash.hex(),'block':receipt.blockNumber,'gas_used':receipt.gasUsed,'status':status,'timestamp':datetime.now(timezone.utc).isoformat()}
