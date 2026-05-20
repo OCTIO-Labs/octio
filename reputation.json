@@ -1,0 +1,87 @@
+{
+  "www.j62n.vip": {
+    "domain": "www.j62n.vip",
+    "first_seen": "2026-05-20T23:49:43.221970+00:00",
+    "last_seen": "2026-05-20T23:52:13.557096+00:00",
+    "times_flagged": 2,
+    "total_vt_malicious": 22,
+    "highest_severity": "HIGH",
+    "highest_confidence": "HIGH",
+    "threat_types": [
+      "PHISHING"
+    ],
+    "urls_seen": [
+      "http://www.j62n.vip/"
+    ],
+    "score": 72.0,
+    "label": "HIGH_RISK"
+  },
+  "praadconsulting.com": {
+    "domain": "praadconsulting.com",
+    "first_seen": "2026-05-20T23:49:43.221970+00:00",
+    "last_seen": "2026-05-20T23:52:13.557096+00:00",
+    "times_flagged": 2,
+    "total_vt_malicious": 8,
+    "highest_severity": "MEDIUM",
+    "highest_confidence": "HIGH",
+    "threat_types": [
+      "PHISHING"
+    ],
+    "urls_seen": [
+      "https://praadconsulting.com/xmx/secure_access-5.html"
+    ],
+    "score": 53.0,
+    "label": "HIGH_RISK"
+  },
+  "www.robiox.com.py": {
+    "domain": "www.robiox.com.py",
+    "first_seen": "2026-05-20T23:49:43.221970+00:00",
+    "last_seen": "2026-05-20T23:52:13.557096+00:00",
+    "times_flagged": 2,
+    "total_vt_malicious": 38,
+    "highest_severity": "MEDIUM",
+    "highest_confidence": "HIGH",
+    "threat_types": [
+      "PHISHING"
+    ],
+    "urls_seen": [
+      "https://www.robiox.com.py/users/253685455601/profile"
+    ],
+    "score": 83.0,
+    "label": "CONFIRMED_THREAT"
+  },
+  "cloudappleid.sviluppo.host": {
+    "domain": "cloudappleid.sviluppo.host",
+    "first_seen": "2026-05-20T23:49:43.221970+00:00",
+    "last_seen": "2026-05-20T23:52:13.557096+00:00",
+    "times_flagged": 2,
+    "total_vt_malicious": 12,
+    "highest_severity": "HIGH",
+    "highest_confidence": "HIGH",
+    "threat_types": [
+      "PHISHING"
+    ],
+    "urls_seen": [
+      "https://cloudappleid.sviluppo.host/7823120-ACES/"
+    ],
+    "score": 62.0,
+    "label": "HIGH_RISK"
+  },
+  "auth-netfliix-mov.vercel.app": {
+    "domain": "auth-netfliix-mov.vercel.app",
+    "first_seen": "2026-05-20T23:49:43.221970+00:00",
+    "last_seen": "2026-05-20T23:52:13.557096+00:00",
+    "times_flagged": 2,
+    "total_vt_malicious": 36,
+    "highest_severity": "HIGH",
+    "highest_confidence": "HIGH",
+    "threat_types": [
+      "PHISHING"
+    ],
+    "urls_seen": [
+      "https://auth-netfliix-mov.vercel.app/"
+    ],
+    "score": 86.0,
+    "label": "CONFIRMED_THREAT"
+  }
+}
