@@ -54,6 +54,7 @@ When a DeFi protocol queries Chainlink, it gets a data point. When it queries OC
 - `web3_bridge.py` -- Submits validated indicators directly to the live Sepolia contract
 - `dns_monitor.py` -- VirusTotal DNS enrichment layer, dual-source confidence scoring (Gemma 4 + VirusTotal)
 - `reputation.py` -- Cumulative domain reputation engine, threat scoring over time with CONFIRMED_THREAT classification
+- `profiles.py` -- Protocol-specific risk profiles, groups threats by impersonated platform with CRITICAL/HIGH risk ratings
 - `registry.py` -- Local registry cache with keccak256 hash storage
 - `oracle.py` -- DeFi protocol query interface with Gemma 4 risk assessment
 - `correlation.py` -- Incident correlation against documented real-world hacks
@@ -94,16 +95,19 @@ python3 dns_monitor.py
 # Step 3: Score domain reputation over time
 python3 reputation.py
 
-# Step 4: Submit verified indicators to the live Sepolia contract
+# Step 4: Build protocol-specific risk profiles
+python3 profiles.py
+
+# Step 5: Submit verified indicators to the live Sepolia contract
 python3 web3_bridge.py
 
-# Step 5: Run the DeFi protocol query interface
+# Step 6: Run the DeFi protocol query interface
 python3 oracle.py
 
-# Step 6: Correlate against documented real-world incidents
+# Step 7: Correlate against documented real-world incidents
 python3 correlation.py
 
-# Step 7: View the live terminal dashboard
+# Step 8: View the live terminal dashboard
 python3 dashboard.py
 ```
 
