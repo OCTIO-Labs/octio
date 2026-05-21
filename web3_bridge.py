@@ -35,8 +35,22 @@ def connect():
 def load_indicators():
     with open(BASE / 'indicators.json') as f:
         data = json.load(f)
-    threats = [i for i in data if i.get('gemma_analysis', {}).get('is_threat')]
-    print('Loaded ' + str(len(data)) + ' indicators  |  ' + str(len(threats)) + ' confirmed threats')
+
+    rep_path = BASE / 'reputation.json'
+    if rep_path.exists():
+        with open(rep_path) as f:
+            reputation = json.load(f)
+        qualified = {'CONFIRMED_THREAT', 'HIGH_RISK'}
+        def domain_from(url):
+            parts = url.split('/')
+            return parts[2] if len(parts) > 2 else url
+        threats = [i for i in data
+                   if i.get('gemma_analysis', {}).get('is_threat')
+                   and reputation.get(domain_from(i['url']), {}).get('label') in qualified]
+        print('Loaded ' + str(len(data)) + ' indicators  |  ' + str(len(threats)) + ' qualified for submission (CONFIRMED_THREAT or HIGH_RISK)')
+    else:
+        threats = [i for i in data if i.get('gemma_analysis', {}).get('is_threat')]
+        print('Loaded ' + str(len(data)) + ' indicators  |  ' + str(len(threats)) + ' confirmed threats')
     return threats
 
 def to_bytes32(hex_str):
@@ -45,7 +59,7 @@ def to_bytes32(hex_str):
 def make_evidence_hash(url):
     return keccak(url.encode())
 
-def submit_indicator(w3, contract, account, indicator):
+def submit_indicator(w3, contract, account, indicator, nonce=None):
     analysis  = indicator['gemma_analysis']
     url       = indicator['url']
     target_bytes   = to_bytes32(indicator['target_hash'])
@@ -55,8 +69,9 @@ def submit_indicator(w3, contract, account, indicator):
     reasoning = analysis['reasoning']
     print('  Submitting: ' + url)
     print('  Type: ' + analysis['threat_type'] + '  Severity: ' + analysis['severity'])
-    nonce     = w3.eth.get_transaction_count(account.address)
-    gas_price = w3.eth.gas_price
+    if nonce is None:
+        nonce = w3.eth.get_transaction_count(account.address, 'pending')
+    gas_price = int(w3.eth.gas_price * 1.2)
     tx = contract.functions.submitIndicator(
         target_bytes, ind_type, severity, evidence_bytes, reasoning
     ).build_transaction({'from':account.address,'nonce':nonce,'gasPrice':gas_price,'gas':500000})
@@ -82,11 +97,14 @@ def run_bridge():
         print('No confirmed threats. Run monitor.py first.')
         return
     results = []
+    nonce = w3.eth.get_transaction_count(account.address, 'pending')
     for indicator in indicators:
         try:
-            results.append(submit_indicator(w3, contract, account, indicator))
+            results.append(submit_indicator(w3, contract, account, indicator, nonce))
+            nonce += 1
         except Exception as e:
             print('  ERROR: ' + str(e))
+            nonce += 1
     total_after = contract.functions.getTotalIndicators().call()
     print('On-chain after: ' + str(total_after) + '  Submitted: ' + str(total_after - total_before))
     with open(BASE / 'bridge_results.json', 'w') as f:
