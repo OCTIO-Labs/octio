@@ -157,3 +157,6 @@ Full whitepaper and research proposal available in the project documentation fol
 - No Chainlink adapter yet -- oracle query from other contracts requires external adapter
 - ReputationManager.sol, GovernanceController.sol in progress
 - Model string is google/gemma-3-27b-it via OpenRouter
+
+
+NOTICE: TO BE MADE PRIVATE ON JUNE 4TH AT MIDNIGHT!!!!
