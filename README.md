@@ -159,4 +159,4 @@ Full whitepaper and research proposal available in the project documentation fol
 - Model string is google/gemma-3-27b-it via OpenRouter
 
 
-NOTICE: TO BE MADE PRIVATE ON JUNE 4TH AT MIDNIGHT!!!!
+NOTICE: TO BE MADE PRIVATE ON JUNE 18TH AT MIDNIGHT!!!!
